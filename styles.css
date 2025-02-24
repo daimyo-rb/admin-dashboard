@@ -17,6 +17,7 @@
 }
 :root {
   --primary-color: #1992d4;
+  --card-accent-color: #f0b429;
   --grey-shade: #e2e8f0;
   --sidebar-padding: 20px;
   --sidebar-tab-container-top-margin: 50px;
@@ -44,7 +45,7 @@ img {
   width: 100vw;
   display: grid;
   grid-template-columns: minmax(150px, 1fr) 5fr;
-  grid-template-rows: 1fr 4fr;
+  grid-template-rows: 100px 1fr;
   /* background-color: pink; */
 }
 .sidebar-wrapper {
@@ -113,10 +114,10 @@ img {
 .dashboard-page {
   /* border: 2px solid green; */
 }
-
 .header {
   grid-row: 1/2;
   grid-column: 2/3;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, .8);
   /* background-color: yellow; */
 }
 .header-wrapper {
@@ -209,8 +210,76 @@ img {
   font-weight: bold;
 
 }
-.main-content {
+.main-content-wrapper {
   grid-row: 2/3;
   grid-column: 2/3;
   background-color: var(--grey-shade);
+}
+.main-content {
+  height: 100%;
+  padding-left: 25px;
+  padding-right: 25px;
+  padding-top: 25px;
+  padding-bottom: 60px;
+  border: 2px solid yellow;
+  display: grid;
+  gap: 20px;
+  grid-auto-flow: column;
+  grid-template-columns: 3fr 1fr;
+}
+.left-main {
+  /* background-color: orange; */
+  display: grid;
+  gap: 10px;
+  grid-template-rows: 30px 1fr;
+}
+.left-title {
+  /* background-color: yellow; */
+  align-self: center;
+  font-weight: bold;
+  font-size: 20px;
+}
+.left-cards {
+  /* background-color: purple; */
+  display: grid;
+  gap: 20px;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+}
+.card-wrapper {
+  /* height: 400px; */
+  /* width: 100%; */
+  /* background-color: orange; */
+  border-left: 10px solid var(--card-accent-color);
+  border-radius: 15px;
+  box-shadow: 0 1px 3px rgba(0, 0, 1px, 0.3);
+}
+.card {
+  height: 100%;
+  padding: 30px 40px 30px 20px;
+  display: grid;
+  grid-template-rows: 30px 1fr 30px;
+  background-color: white;
+  border-radius: 5  px;
+}
+.card-name {
+  font-weight: bold;
+  font-size: 18px;
+}
+.card-description {
+  color: rgb(30,30,30);
+  font-size: 16px;
+}
+.card ul {
+  /* background-color: green; */
+  justify-self: end;
+  align-self: bottom;
+  display: flex;
+  gap: 30px;
+}
+.card ul li {
+  /* background-color: yellow; */
+}
+.right-main {
+  background-color: blue;
 }
